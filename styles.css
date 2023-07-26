@@ -75,3 +75,7 @@ h2 {
 #summaryTable td {
     text-align: center;
 }
+
+#archivedNotesTable tr td:nth-last-child(-n + 3) {
+    padding: 8px;
+}
