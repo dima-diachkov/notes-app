@@ -1,4 +1,5 @@
 import { formatTime } from './utils.js'
+import { errorMessages } from './dictionary.js';
 
 export function addNote(notes, content, category) {
     const id = notes.length + 1;
@@ -10,7 +11,7 @@ export function addNote(notes, content, category) {
             if (notes.push(newNote)) {
                 resolve(newNote);
             } else {
-                reject(new Error('Failed to add note. Please try again.'));
+                reject(new Error(errorMessages.addNoteFailed));
             }
         }, 500);
     });

@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+}
+
+#app {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+thead,
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #344D90;
+    /* Green color for buttons */
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5CC5EF;
+}
+
+input[type="text"],
+select {
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(50% - 8px);
+    margin-bottom: 10px;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+#summaryTable {
+    table-layout: fixed;
+}
+
+#summaryTable th {
+    width: calc(100% / 3);
+}
+
+#summaryTable td {
+    text-align: center;
+}

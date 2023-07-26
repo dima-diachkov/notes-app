@@ -1,3 +1,4 @@
+import { labels, messages } from './dictionary.js';
 import { editNote, removeNote, archiveNote, unarchiveNote } from './notes.js';
 import { getDatesFromNoteContent } from './utils.js';
 
@@ -10,7 +11,7 @@ export function createActionButton(label, onClickHandler) {
 
 export function createActionHandlers(notes, note, renderFunctions) {
   const onEdit = () => {
-    const newContent = prompt('Edit the note content:', note.content);
+    const newContent = prompt(messages.editPrompt, note.content);
     if (newContent !== null) {
       editNote(notes, note.id, newContent.trim(), note.category);
       renderFunctions.forEach(renderFunc => renderFunc(notes));
@@ -18,7 +19,7 @@ export function createActionHandlers(notes, note, renderFunctions) {
   };
 
   const onRemove = () => {
-    const confirmation = confirm('Are you sure you want to remove this note?');
+    const confirmation = confirm(messages.removeConfirmation);
     if (confirmation) {
       removeNote(notes, note.id);
       renderFunctions.forEach(renderFunc => renderFunc(notes));
@@ -51,7 +52,7 @@ export function createTableHeaderRow(table, headers, actionsHeaderColSpan) {
     headerRow.appendChild(headerCell);
   });
   const actionsHeaderCell = document.createElement('th');
-  actionsHeaderCell.textContent = 'Actions';
+  actionsHeaderCell.textContent = labels.edit;
   actionsHeaderCell.colSpan = actionsHeaderColSpan;
   headerRow.appendChild(actionsHeaderCell);
 }
